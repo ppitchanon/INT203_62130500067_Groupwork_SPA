@@ -1,7 +1,7 @@
 <template>
-  <div class="text-gray-900 bg-gray-200">
-    <div class="p-4 flex">
-      <h1 class="text-3xl font-bold text-gray-700">
+  <div class="text-gray-900 bg-white">
+    <div class="px-40 py-10 flex">
+      <h1 class="text-4xl font-bold text-gray-700 ">
         Information
       </h1>
     </div>

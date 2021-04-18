@@ -9,70 +9,70 @@
             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-last-name"
               >
                 Firstname
               </label>
               <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-last-name"
                 type="text"
-                placeholder="Firstname"
+                placeholder="John"
                 v-model="fname"
               />
-              <p class="text-gray-red text-xs italic" v-if="showfname" >Please Enter your Firstname</p>
+              <p class="text-gray-red text-xs italic" v-if="showfname">
+                Please Enter your Firstname
+              </p>
             </div>
             <div class="w-full md:w-1/2 px-3">
               <label
                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-last-name"
               >
-                Last Name
+                Lastname
               </label>
               <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-last-name"
                 type="text"
-                placeholder="Lastname"
+                placeholder="Smit"
                 v-model="lname"
               />
-              <p class="text-red-600 text-xs italic" v-if="showlname" >Please Enter your Lastname</p>
+              <p class="text-red-600 text-xs italic" v-if="showlname">
+                Please Enter your Lastname
+              </p>
             </div>
           </div>
           <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full px-3">
               <label
                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-password"
               >
                 Email
               </label>
               <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-password"
                 type="text"
                 placeholder="Example@mail.com"
                 v-model="email"
               />
-              <p class="text-red-600 text-xs italic" v-if="showemail" >Please Enter your Email</p>
+              <p class="text-red-600 text-xs italic" v-if="showemail">
+                Please Enter your Email
+              </p>
             </div>
           </div>
           <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full px-3">
               <label
                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                for="grid-password"
               >
                 Password
               </label>
               <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-password"
                 type="password"
                 placeholder="**********"
                 v-model="password"
               />
-              <p class="text-red-600 text-xs italic" v-if="showfpassword" >Please Enter your Password</p>
+              <p class="text-red-600 text-xs italic" v-if="showfpassword">
+                Please Enter your Password
+              </p>
             </div>
           </div>
           <div
@@ -97,12 +97,12 @@
 export default {
   data() {
     return {
-      url : "http://localhost:3000/information" ,
+      url: "http://localhost:3000/information",
       fname: "",
       lname: "",
       email: "",
       password: "",
-    }
+    };
   },
   methods: {
     submitform() {
@@ -118,12 +118,10 @@ export default {
           return response.data;
         })
         .catch((error) => {
-          console.log(error) 
+          console.log(error);
         });
     },
   },
-}
+};
 const axios = require("axios");
 </script>
-
-

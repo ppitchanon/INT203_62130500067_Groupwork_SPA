@@ -5,7 +5,7 @@
         Information
       </h1>
     </div>
-    <info v-for = "data in form" :key="data.id" :form="data" ></info>
+    <info v-for = "data in form" :key="data.id" :form="data" @delete-form="deleteData"></info>
   </div>
 </template>
 
@@ -18,6 +18,19 @@ export default {
     }
   },
   methods: {
+    deleteData(id) {
+      axios
+        .delete(`${this.url}/${id}`)
+        .then((response) => {
+          return response.data;
+        })
+        .then(() => {
+          this.form = this.form.filter((n) => n.id !== id);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
     getNoteResult() {
       axios
         .get(this.url)

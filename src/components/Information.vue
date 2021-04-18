@@ -40,6 +40,7 @@
             <button
               type="button"
               class="text-sm font-bold bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+              @click="deleteForm"
             >
               Delete
             </button>
@@ -54,7 +55,11 @@
 export default {
   props: {
     form: Object 
-  }
-  
+  } ,
+  methods: {
+    deleteForm() {
+      this.$emit("delete-form",this.form.id);
+    },
+  },
 }
 </script>

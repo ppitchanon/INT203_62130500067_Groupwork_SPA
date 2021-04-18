@@ -4,7 +4,7 @@
       class="flex max-w-sm w-full bg-white shadow-md rounded-lg overflow-hidden mx-auto"
     >
       <div class="flex items-center px-2 py-3">
-        <form class="w-full max-w-lg">
+        <form class="w-full max-w-lg" @submit.prevent="submitform">
           <div class="flex flex-wrap -mx-3 mb-8">
             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
@@ -50,7 +50,7 @@
               <input
                 class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-password"
-                type="password"
+                type="text"
                 placeholder="Example@mail.com"
                 v-model="email"
               />
@@ -92,3 +92,38 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      url : "http://localhost:3000/information" ,
+      fname: "",
+      lname: "",
+      email: "",
+      password: "",
+    }
+  },
+  methods: {
+    submitform() {
+      axios
+        .post(this.url, {
+          fname: this.fname,
+          lname: this.lname,
+          email: this.email,
+          password: this.password,
+        })
+        .then((response) => {
+          this.form = [...this.form, response.data];
+          return response.data;
+        })
+        .catch((error) => {
+          console.log(error) 
+        });
+    },
+  },
+}
+const axios = require("axios");
+</script>
+
+

@@ -1,0 +1,25 @@
+{
+  "information": [
+    {
+      "fname": "Pitchanon",
+      "lname": "Wongkhamlue",
+      "email": "Pitchanon2544@gmail.com",
+      "password": "12345678",
+      "id": 1
+    },
+    {
+      "fname": "Pitchanon",
+      "lname": "Wongkhamlue",
+      "email": "Pitchanon_2544@hotmail.com",
+      "password": "1212312121",
+      "id": 2
+    },
+    {
+      "fname": "khomsan",
+      "lname": "wdw",
+      "email": "sao@mail.kmutt.ac.th",
+      "password": "wqewqdwqdwqd",
+      "id": 3
+    }
+  ]
+}

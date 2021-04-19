@@ -18,6 +18,35 @@ export default {
     }
   },
   methods: {
+    // editForm(editform) {
+    //   axios
+    //     .put(`${this.url}/${editform.id}`, {
+    //       fname: this.fname,
+    //       lname: this.lname,
+    //       email: this.email,
+    //       password: this.password,
+    //     })
+    //     .catch((error) => {
+    //       console.log(error);
+    //     })
+    //     .then((response) => {
+    //       this.form = this.form.map((f) =>
+    //         f.id === editform.id
+    //           ? { ...f, 
+    //             fname: this.fname, 
+    //             lname: this.lname,
+    //             email: this.email,
+    //             password: this.password }
+    //           : f
+    //       );
+    //       this.isEdit = false;
+    //       this.fname = "";
+    //       this.lname = "";
+    //       this.email = "";
+    //       this.password = "";
+    //       return response.data;
+    //     });
+    // },
     deleteData(id) {
       axios
         .delete(`${this.url}/${id}`)

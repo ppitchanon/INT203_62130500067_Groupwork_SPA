@@ -106,24 +106,55 @@ export default {
   },
   methods: {
     submitform() {
+      if (this.$route.params.id != undefined) {
+        axios
+          .put(this.url + "/" + this.$route.params.id, {
+            fname: this.fname,
+            lname: this.lname,
+            email: this.email,
+            password: this.password,
+          })
+          .then(() => {
+            // this.$router.push("/About");
+
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      } else {
+        axios
+          .post(this.url, {
+            fname: this.fname,
+            lname: this.lname,
+            email: this.email,
+            password: this.password,
+          })
+          .then(() => {
+            // this.$router.push("/about");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+      this.$router.push("/about");
+    },
+  },
+  mounted() {
+    this.$route.params.id;
+    console.log(this.$route.params.id);
+    if (this.$route.params.id != undefined) {
       axios
-        .post(this.url, {
-          fname: this.fname,
-          lname: this.lname,
-          email: this.email,
-          password: this.password,
-        })
-        .then(() => {
-          this.$router.push("About");
-        })
+        .get(this.url + "/" + this.$route.params.id)
         .then((response) => {
-          this.form = [...this.form, response.data];
-          return response.data;
+          this.fname = response.data.fname;
+          this.lname = response.data.lname;
+          this.email = response.data.email;
+          this.password = response.data.password;
         })
         .catch((error) => {
           console.log(error);
         });
-    },
+    }
   },
 };
 const axios = require("axios");

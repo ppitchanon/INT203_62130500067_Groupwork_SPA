@@ -34,7 +34,9 @@
             <button
               type="button"
               class="mr-3 text-sm font-bold bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
-            >
+              @click="editForm"
+              >
+              
               Edit
             </button>
             <button
@@ -60,6 +62,10 @@ export default {
     deleteForm() {
       this.$emit("delete-form",this.form.id);
     },
+    editForm(){
+      this.$router.push("/edit/"+this.form.id);
+      this.$emit("edit-form",this.form.id);
+    }
   },
 }
 </script>

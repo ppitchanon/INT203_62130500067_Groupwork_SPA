@@ -4,7 +4,7 @@
       class="flex max-w-sm w-full bg-white shadow-md rounded-lg overflow-hidden mx-auto"
     >
       <div class="flex items-center px-2 py-3">
-        <form class="w-full max-w-lg" @submit.prevent="submitform">
+        <form class="w-full max-w-lg" @submit="submitform">
           <div class="flex flex-wrap -mx-3 mb-8">
             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
@@ -81,7 +81,7 @@
             <div></div>
             <button
               type="submit"
-              class="bg-blue-500 text-white font-bold px-5 py-2 rounded focus:outline-none shadow hover:bg-blue-700 transition-colors"
+              class="px-8 py-2 text-lg font-medium text-white transition-colors duration-300 transform bg-indigo-600 rounded hover:bg-indigo-500"
             >
               Submit
             </button>
@@ -112,6 +112,9 @@ export default {
           lname: this.lname,
           email: this.email,
           password: this.password,
+        })
+        .then(() => {
+          this.$router.push("About");
         })
         .then((response) => {
           this.form = [...this.form, response.data];
